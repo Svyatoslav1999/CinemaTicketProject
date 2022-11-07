@@ -12,7 +12,7 @@ import com.querydsl.jpa.impl.JPAQueryFactory;
 import lombok.Builder;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-import org.webjars.NotFoundException;
+
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -53,7 +53,7 @@ public class TicketServiseImpl implements TicketServise {
           SessionEntity sessionEntity = (SessionEntity) tuple.toArray()[1];
           Long numberOfSeats = (Long) tuple.toArray()[0];
           if (numberOfSeats == null || numberOfSeats == 0){
-              throw new NotFoundException("Number of seats not defined");
+              throw new UnsupportedOperationException();
           }
           List<TicketEntity> tickets = new ArrayList<TicketEntity>();
        for(int i = 1; i <=numberOfSeats; i++){
