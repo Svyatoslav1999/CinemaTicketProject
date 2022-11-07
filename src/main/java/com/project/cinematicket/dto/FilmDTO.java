@@ -1,5 +1,6 @@
 package com.project.cinematicket.dto;
 
+import com.project.cinematicket.enums.Genre;
 import lombok.Getter;
 import lombok.Setter;
 

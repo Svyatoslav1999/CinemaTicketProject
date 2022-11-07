@@ -1,5 +1,7 @@
 package com.project.cinematicket.controller;
 
+import com.project.cinematicket.dto.SessionDTO;
+import com.project.cinematicket.servise.SessionServise;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;

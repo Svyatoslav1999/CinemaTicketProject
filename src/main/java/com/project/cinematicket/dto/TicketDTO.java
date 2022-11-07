@@ -1,5 +1,7 @@
 package com.project.cinematicket.dto;
 
+import com.project.cinematicket.entity.SessionEntity;
+import com.project.cinematicket.entity.UserEntity;
 import lombok.Getter;
 import lombok.Setter;
 

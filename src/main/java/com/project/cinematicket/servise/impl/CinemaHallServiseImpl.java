@@ -4,7 +4,7 @@ import com.project.cinematicket.dto.CinemaHallDTO;
 import com.project.cinematicket.entity.CinemaHallEntity;
 import com.project.cinematicket.mapper.CinemaHallMapper;
 import com.project.cinematicket.repository.CinemaHallRepository;
-import com.project.cinematicket.CinemaHallServise;
+import com.project.cinematicket.servise.CinemaHallServise;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;

@@ -1,5 +1,7 @@
 package com.project.cinematicket.controller;
 
+import com.project.cinematicket.dto.FilmDTO;
+import com.project.cinematicket.servise.FilmServise;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
