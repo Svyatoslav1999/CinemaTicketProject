@@ -1,0 +1,182 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1667904178136-1
+      author: Toshiba (generated)
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  autoIncrement: true
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: cinema_hallPK
+                  name: id
+                  type: BIGINT
+              - column:
+                  name: number_of_seats
+                  type: BIGINT
+            tableName: cinema_hall
+  - changeSet:
+      id: 1667904178136-2
+      author: Toshiba (generated)
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  autoIncrement: true
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: filmsPK
+                  name: id
+                  type: BIGINT
+              - column:
+                  name: film_genre
+                  type: VARCHAR(255)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: film_name
+                  type: VARCHAR(25)
+            tableName: films
+  - changeSet:
+      id: 1667904178136-3
+      author: Toshiba (generated)
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  autoIncrement: true
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: sessionsPK
+                  name: id
+                  type: BIGINT
+              - column:
+                  name: finish_session
+                  type: datetime(6)
+              - column:
+                  name: session_time
+                  type: BIGINT
+              - column:
+                  name: start_session
+                  type: datetime(6)
+              - column:
+                  name: ticket_price
+                  type: DOUBLE PRECISION
+              - column:
+                  name: cinema_hall_id
+                  type: BIGINT
+              - column:
+                  name: film_id
+                  type: BIGINT
+            tableName: sessions
+  - changeSet:
+      id: 1667904178136-4
+      author: Toshiba (generated)
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  autoIncrement: true
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: ticketsPK
+                  name: id
+                  type: BIGINT
+              - column:
+                  name: price
+                  type: BIGINT
+              - column:
+                  name: reserved
+                  type: BIT
+              - column:
+                  name: seat_number
+                  type: BIGINT
+              - column:
+                  name: session_id
+                  type: BIGINT
+              - column:
+                  name: user_id
+                  type: BIGINT
+            tableName: tickets
+  - changeSet:
+      id: 1667904178136-5
+      author: Toshiba (generated)
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  autoIncrement: true
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: usersPK
+                  name: id
+                  type: BIGINT
+              - column:
+                  name: money_balance
+                  type: DOUBLE PRECISION
+              - column:
+                  name: name
+                  type: VARCHAR(255)
+              - column:
+                  name: surname
+                  type: VARCHAR(255)
+            tableName: users
+  - changeSet:
+      id: 1667904178136-6
+      author: Toshiba (generated)
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: user_id
+            baseTableName: tickets
+            constraintName: FK4eqsebpimnjen0q46ja6fl2hl
+            deferrable: false
+            initiallyDeferred: false
+            referencedColumnNames: id
+            referencedTableName: users
+            validate: true
+  - changeSet:
+      id: 1667904178136-7
+      author: Toshiba (generated)
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: session_id
+            baseTableName: tickets
+            constraintName: FK6yhwfajgdoqa8kq4gnuimtkpp
+            deferrable: false
+            initiallyDeferred: false
+            referencedColumnNames: id
+            referencedTableName: sessions
+            validate: true
+  - changeSet:
+      id: 1667904178136-8
+      author: Toshiba (generated)
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: cinema_hall_id
+            baseTableName: sessions
+            constraintName: FKmvi1kravrkkb2s59du5cny2w6
+            deferrable: false
+            initiallyDeferred: false
+            referencedColumnNames: id
+            referencedTableName: cinema_hall
+            validate: true
+  - changeSet:
+      id: 1667904178136-9
+      author: Toshiba (generated)
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: film_id
+            baseTableName: sessions
+            constraintName: FKn2m0d43s7i2gofapl0d8qkvq7
+            deferrable: false
+            initiallyDeferred: false
+            referencedColumnNames: id
+            referencedTableName: films
+            validate: true
+
